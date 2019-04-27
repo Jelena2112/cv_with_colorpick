@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.colorPicker{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+    margin: 0 auto;
+}
+.color{
+    width: 20%;
+    display: none;
+    align-items: center;
+}
+.navColor{
+    display: none;
+    align-items: left;
+    cursor: pointer;
+}
+.nav{
+    width: 100px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: red;
+}
+
+
