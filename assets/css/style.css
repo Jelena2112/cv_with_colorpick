@@ -20,6 +20,9 @@
     align-items: left;
     cursor: pointer;
 }
+.saveButton{
+    display: none;
+}
 .nav{
     width: 100px;
     height: 100vh;

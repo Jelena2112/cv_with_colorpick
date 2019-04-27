@@ -9,6 +9,11 @@ $(document).ready(function(){
     $(".colorPicker").click(function () {
         $(".colorPicker").animate({"width":"40%"});
         $(".color, .navColor").css({"display":"flex"});
+        $(".saveButton").css({"display":"block"});
+    });
+
+    $(".saveButton").click(function () {
+        localStorage.setItem('compressedFunc', changeColor());
     });
 
     $('.red').on('input', function () {
@@ -27,7 +32,6 @@ $(document).ready(function(){
         opacity = $(this).val();
         changeColor();
     });
-
     function changeColor() {
         $('.nav').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
