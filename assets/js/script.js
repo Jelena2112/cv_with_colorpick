@@ -6,14 +6,27 @@ $(document).ready(function(){
     var opacity = 1;
     changeColor();
 
-    $(".colorPicker").click(function () {
-        $(".colorPicker").animate({"width":"40%"});
-        $(".color, .navColor").css({"display":"flex"});
-        $(".saveButton").css({"display":"block"});
+    var newColor = localStorage.getItem('background');
+
+    if(newColor != null){
+        $(".nav").css({"background":newColor});
+    }
+
+    $(".change_color").dblclick(function(){
+
+        $(".colorPicker").css({"display":"flex"});
+
+        $(".colorPicker").click(function () {
+            $(".colorPicker").animate({"width":"40%"});
+            $(".color, .navColor").css({"display":"flex"});
+            $(".saveButton").css({"display":"block"});
+        });
+
     });
 
+
     $(".saveButton").click(function () {
-        localStorage.setItem('compressedFunc', changeColor());
+        localStorage.setItem('background', "rgba("+red+","+green+","+blue+","+opacity+")");
     });
 
     $('.red').on('input', function () {
@@ -35,5 +48,6 @@ $(document).ready(function(){
     function changeColor() {
         $('.nav').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
+
 
 });
