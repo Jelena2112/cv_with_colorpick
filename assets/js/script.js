@@ -1,18 +1,29 @@
 $(document).ready(function(){
 
+    // stringify: https://www.w3schools.com/js/js_json_stringify.asp
+
     var red = 125;
     var green = 125;
     var blue = 125;
     var opacity = 1;
+    var displayNone = null;
     changeColor();
 
-    var newColor = localStorage.getItem('background');
+    var newColor = localStorage.getItem("siteColors");
+
+    newColor = JSON.parse(newColor);
+    console.log(newColor);
+
+    var rgba ={};
 
     if(newColor != null){
-        $(".nav").css({"background":newColor});
+        for(myData in newColor)
+        {
+            $(".change_color[data-color="+myData+"]").css({"background":newColor[myData]});
+        }
     }
 
-    $(".change_color").dblclick(function(){
+    $(".change_color").click(function(){
 
         $(".colorPicker").css({"display":"flex"});
 
@@ -24,9 +35,22 @@ $(document).ready(function(){
 
     });
 
+    $(".saveButton").click(function (e) {
 
-    $(".saveButton").click(function () {
-        localStorage.setItem('background', "rgba("+red+","+green+","+blue+","+opacity+")");
+        displayNone = 1;
+
+        rgba[ $(".change_color").attr('data-color') ] = "rgba("+red+","+green+","+blue+","+opacity+")";
+
+        var object = JSON.stringify(rgba);
+
+        localStorage.setItem("siteColors",object);
+
+        if(displayNone != null)
+        {
+            $(".colorPicker").css({"display":"none"});
+        }
+
+        e.preventDefault();
     });
 
     $('.red').on('input', function () {
@@ -48,6 +72,5 @@ $(document).ready(function(){
     function changeColor() {
         $('.nav').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
-
 
 });
