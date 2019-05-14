@@ -23,15 +23,11 @@ $(document).ready(function(){
         }
     }
 
-    $(".change_color").click(function(){
+    $(".colorIcon").click(function(){
 
-        $(".colorPicker").css({"display":"flex"});
-
-        $(".colorPicker").click(function () {
-            $(".colorPicker").animate({"width":"40%"});
-            $(".color, .navColor").css({"display":"flex"});
-            $(".saveButton").css({"display":"block"});
-        });
+        $(".colorPicker").css({"display":"flex"}).animate({"width":"40%"});
+        $(".color").css({"display":"flex"});
+        $(".saveButton").css({"display":"block"});
 
     });
 
