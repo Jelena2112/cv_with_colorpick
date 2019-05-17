@@ -23,10 +23,12 @@ $(document).ready(function(){
         }
     }
 
+    $(".colorPicker").css({"background":newColor[myData]});
+
     $(".colorIcon").click(function(){
 
         $(".colorPicker").css({"display":"flex"}).animate({"width":"40%"});
-        $(".color").css({"display":"flex"});
+        $(".color").css({"display":"inline-block"});
         $(".saveButton").css({"display":"block"});
 
     });
@@ -66,7 +68,39 @@ $(document).ready(function(){
         changeColor();
     });
     function changeColor() {
-        $('.nav').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
+        $('.nav, .colorPicker').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
+
+   var currentSection = "#home";
+
+    $(".arrowRight").click(function(){
+        console.log("TEST");
+        if(currentSection == "#home"){
+            currentSection = "#about";
+        }
+        else if(currentSection == "#about"){
+            currentSection = "#projects";
+        }
+        else if(currentSection == "#projects"){
+            currentSection = "#skills";
+        }
+        else if(currentSection == "#skills"){
+            currentSection = "#contact";
+        }
+
+        $('html, body').animate({
+            scrollLeft: $(currentSection).offset().left
+        }, 2000).promise().done(function() {
+            if(currentSection != "#home")
+            {
+
+                $(".arrowLeft").css({"display":"flex"});
+            }
+            else {
+                $(".arrowLeft").hide();
+            }
+        });
+
+    });
 
 });

@@ -6,27 +6,71 @@
         <meta charset="UTF-8">
         <title>Title</title>
         <link rel="stylesheet" type="text/css" href="compass/stylesheets/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
 
     <body>
         <form class="colorPicker">
-            <input type="range" min="1" max="255" value="125" class="color red">
-            <input type="range" min="1" max="255" value="125" class="color green">
-            <input type="range" min="1" max="255" value="125" class="color blue">
-            <input type="range" min="0" max="1" value="1"  step="0.1" class="color opacity">
+            <div class="colorRange">
+                <input type="range" min="1" max="255" value="125" class="color red">
+                <input type="range" min="1" max="255" value="125" class="color green">
+                <input type="range" min="1" max="255" value="125" class="color blue">
+                <input type="range" min="0" max="1" value="1"  step="0.1" class="color opacity">
+            </div>
             <button class="saveButton">Save</button>
         </form>
 
         <nav class="nav change_color" data-color="navigation">
             <img class="colorIcon" src="assets/img/colors.png" alt="image">
+            <div class="navSection">
+                <a class="navLink">Home</a>
+                <a class="navLink">About</a>
+                <a class="navLink">Projects</a>
+                <a class="navLink">Skills</a>
+                <a class="navLink">Contact</a>
+            </div>
+                <i class="fas fa-mail-bulk"></i>
         </nav>
 
+        <a class="arrowRight">
+            <i class="fas fa-angle-double-right"></i>
+        </a>
+
+        <a class="arrowLeft">
+            <i class="fas fa-angle-double-left"></i>
+        </a>
+
+        <section class="home scroll" id="home">
+            <article class="homeArticle">
+                <h1 class="homeName">Zivanovic Jelena</h1>
+            </article>
+
+        </section>
+
+        <section class="about scroll" id="about">
+
+        </section>
+
+        <section class="projects scroll" id="projects">
+
+        </section>
+
+        <section class="skills scroll" id="skills">
+
+        </section>
+
+        <section class="contact scroll" id="contact">
+
+        </section>
 
 
 
-         <script src="assets/js/jquery.min.js"></script>
+
+
+
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
 
     </body>
