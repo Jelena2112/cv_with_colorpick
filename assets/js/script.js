@@ -120,7 +120,6 @@ $(document).ready(function(){
             scrollLeft: $(currentSection).offset().left
         },2000);
 
-
     });
 
     //  var elements = ["#home","#about","#projects"];
@@ -132,5 +131,14 @@ $(document).ready(function(){
     //          scrollLeft: $(elements[currentElement]).offset().left
     //      }, 2000);
     // });
+
+    $(".bar").click(function () {
+
+       $(".navSection").show().animate({
+           "height":"300px",
+           "background-color":newColor[myData]
+       });
+        console.log("juhu");
+    });
 
 });

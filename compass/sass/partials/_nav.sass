@@ -22,15 +22,42 @@
   text-shadow: 1px 1px 1px white
   font-family: $nav-font
 
-.navIcons
-  height: 100px
-  width: 100%
-  display: flex
-  align-items: baseline
-
 .fa-mail-bulk
   position: absolute
   font-size: 2em
   bottom: 30px
   left: calc(100px - 2em)
   text-shadow: 1px 1px 1px white
+
+.mobileBar
+  display: none
+
+@media only screen and (min-width: 0px) and (max-width: 1024px)
+  .nav
+    height: 80px
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+  .navSection
+    display: none
+    margin-top: 80px
+
+  .navLink
+    width: 100%
+    height: 60px
+    line-height: 60px
+
+  .fa-mail-bulk
+    display: none !important
+
+  .colorIcon
+    width: 70px
+    height: auto
+    padding: 5px 10px
+
+  .mobileBar
+    display: flex
+    font-size: 2.5em
+    margin: 20px
+
