@@ -12,7 +12,6 @@ $(document).ready(function(){
     var newColor = localStorage.getItem("siteColors");
 
     newColor = JSON.parse(newColor);
-    console.log(newColor);
 
     var rgba ={};
 
@@ -23,7 +22,11 @@ $(document).ready(function(){
         }
     }
 
-    $(".colorPicker").css({"background":newColor[myData]});
+    $(".colorLink").click(function() {
+        var color = $(this).parent().css("background-color");
+        $(".colorPicker").css({"background-color":color});
+    });
+
 
     $(".colorLink").click(function(){
 
@@ -132,13 +135,8 @@ $(document).ready(function(){
     //      }, 2000);
     // });
 
-    $(".bar").click(function () {
-
-       $(".navSection").show().animate({
-           "height":"300px",
-           "background-color":newColor[myData]
-       });
-        console.log("juhu");
+    $(".mobileBar").click(function () {
+       $(".navSection").toggle();
     });
 
 });
