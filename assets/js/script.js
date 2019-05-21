@@ -25,7 +25,7 @@ $(document).ready(function(){
 
     $(".colorPicker").css({"background":newColor[myData]});
 
-    $(".colorIcon").click(function(){
+    $(".colorLink").click(function(){
 
         $(".colorPicker").css({"display":"flex"}).animate({"width":"40%"});
         $(".color").css({"display":"inline-block"});
