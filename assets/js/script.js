@@ -135,8 +135,20 @@ $(document).ready(function(){
     //      }, 2000);
     // });
 
+    var mobBar = null;
+
     $(".mobileBar").click(function () {
-       $(".navSection").toggle();
+        $(".navSection").toggle();
+
+           if (mobBar == null) {
+
+               $(".navSection").css({"display": "flex"});
+               mobBar = 1;
+           } else {
+               $(".navSection").css({"display": "none"});
+               mobBar = null;
+           }
+
     });
 
 });
