@@ -135,29 +135,34 @@ $(document).ready(function(){
     //      }, 2000);
     // });
 
-    var mobBar = null;
+    var navigationShown = false;
     var inProgress = false;
 
     $(".mobileBar").click(function () {
 
         if(!inProgress)
         {
-            if (mobBar == null) {
-            $(".navSection").show(function () {
-                $(".navSection").css({"display": "flex"});
-                $(".navSection").animate({"height": "250px"}, 1000);
-                mobBar = 1;
-                inProgress = false;
-            });
-            } else {
-                $(".navSection").animate({"height": "0px"}, 1000, function () {
-                    $(".navSection").css({"display": "none"});
-                    mobBar = null;
+            if (!navigationShown) {
+                $(".navSection").show(function () {
+                    $(".navSection").css({"display": "flex"});
+                    $(".navSection").animate({"height": "250px"}, 1000);
+                    $(".fa-bars").hide();
+                    $(".fa-times").show();
+                    navigationShown = true;
                     inProgress = false;
                 });
             }
-        }
+            else {
+                $(".navSection").animate({"height": "0px"}, 1000, function () {
+                    $(".navSection").css({"display": "none"});
+                    $(".fa-times").hide();
+                    $(".fa-bars").show();
+                    navigationShown = false;
+                    inProgress = false;
+                });
+            }
 
+        }
         inProgress = true;
 
     });

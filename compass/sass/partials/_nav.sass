@@ -31,7 +31,7 @@
   left: calc(100px - 2em)
   text-shadow: 1px 1px 1px white
 
-.mobileBar
+.mobileBar, .mobileTimes
   display: none
 
 @media only screen and (min-width: 0px) and (max-width: 1024px)
@@ -65,7 +65,16 @@
   .mobileBar
     display: flex
     margin: 15px
-    font-size: 2em
+    font-size: 2.2em
+
+  .mobileBar:nth-child(2)
+    display: none
+
+  .fa-times
+    display: none
+
+
+
 
 
 
