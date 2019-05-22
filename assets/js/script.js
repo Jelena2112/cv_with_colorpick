@@ -136,18 +136,29 @@ $(document).ready(function(){
     // });
 
     var mobBar = null;
+    var inProgress = false;
 
     $(".mobileBar").click(function () {
-        $(".navSection").toggle();
 
-           if (mobBar == null) {
+        if(!inProgress)
+        {
+            if (mobBar == null) {
+            $(".navSection").show(function () {
+                $(".navSection").css({"display": "flex"});
+                $(".navSection").animate({"height": "250px"}, 1000);
+                mobBar = 1;
+                inProgress = false;
+            });
+            } else {
+                $(".navSection").animate({"height": "0px"}, 1000, function () {
+                    $(".navSection").css({"display": "none"});
+                    mobBar = null;
+                    inProgress = false;
+                });
+            }
+        }
 
-               $(".navSection").css({"display": "flex"});
-               mobBar = 1;
-           } else {
-               $(".navSection").css({"display": "none"});
-               mobBar = null;
-           }
+        inProgress = true;
 
     });
 
