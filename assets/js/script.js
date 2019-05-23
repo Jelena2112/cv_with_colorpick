@@ -7,6 +7,10 @@ $(document).ready(function(){
     var blue = 125;
     var opacity = 1;
     var displayNone = null;
+    var currentSection = "#home";
+    var navigationShown = false;
+    var inProgress = false;
+    var widthWindow = $(window).width();
     changeColor();
 
     var newColor = localStorage.getItem("siteColors");
@@ -29,11 +33,14 @@ $(document).ready(function(){
 
 
     $(".colorLink").click(function(){
-
-        $(".colorPicker").css({"display":"flex"}).animate({"width":"40%"});
+        if (widthWindow > 1025){
+            $(".colorPicker").css({"display":"flex"}).animate({"width":"40%"});
+        }
+        else{
+            $(".colorPicker").css({"display":"flex"}).animate({"width":"90%"});
+        }
         $(".color").css({"display":"inline-block"});
         $(".saveButton").css({"display":"block"});
-
     });
 
     $(".saveButton").click(function (e) {
@@ -74,7 +81,7 @@ $(document).ready(function(){
         $('.nav, .colorPicker').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
 
-   var currentSection = "#home";
+
 
     $(".arrowRight").click(function(){
         if(currentSection == "#home"){
@@ -135,8 +142,6 @@ $(document).ready(function(){
     //      }, 2000);
     // });
 
-    var navigationShown = false;
-    var inProgress = false;
 
     $(".mobileBar").click(function () {
 

@@ -16,6 +16,7 @@
   position: fixed
   top: 0
   left: 150px
+  z-index: 50
 
 .color
   width: 24%
@@ -29,5 +30,15 @@
   border-radius: 5px
   border-style: none
   margin: 0 auto
+
+@media only screen and (min-width: 0px) and (max-width: 1024px)
+  .colorPicker
+    width: 90%
+    top: calc(50vh - 55px)
+    left: calc(50% - 45%)
+
+  .saveButton
+    width: 110px
+    height: 40px
 
 
