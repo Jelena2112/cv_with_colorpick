@@ -47,6 +47,9 @@ $(document).ready(function(){
             $(".arrowRight").hide();
             currentNavPosition = "#contact";
         }
+        $('html, body').animate({
+            scrollLeft: $(currentNavPosition).offset().left
+        },2000);
     });
 
 
