@@ -30,6 +30,27 @@ $(document).ready(function(){
         }
     }
 
+    $(".navLink").click(function(){
+
+        var currentNavPosition = $(this).attr("href");
+        $(".arrowLeft").show();
+        $(".arrowRight").show();
+
+        if(currentNavPosition == "#home"){
+            $(".arrowLeft").hide();
+            currentNavPosition = "#home";
+        }
+        else if(currentNavPosition == "#about" || currentNavPosition == "#projects" || currentNavPosition == "#skills") {
+            $(".arrowLeft").show();
+            currentNavPosition = $(this).attr("href");
+        }
+        else if(currentNavPosition == "#contact"){
+            $(".arrowRight").hide();
+            currentNavPosition = "#contact";
+        }
+    });
+
+
     $(".colorLink").click(function() {
         var color = $(this).parent().css("background-color");
         $(".colorPicker").css({"background-color":color});
@@ -85,8 +106,6 @@ $(document).ready(function(){
         $('.nav, .colorPicker').css({"background":"rgba("+red+","+green+","+blue+","+opacity+")"});
     }
 
-
-
     $(".arrowRight").click(function(){
         if(currentSection == "#home"){
             currentSection = "#about";
@@ -136,6 +155,8 @@ $(document).ready(function(){
 
     });
 
+
+
     //  var elements = ["#home","#about","#projects"];
     //  var currentElement = 0;
     //
@@ -173,7 +194,6 @@ $(document).ready(function(){
 
         }
         inProgress = true;
-
     });
 
 });
