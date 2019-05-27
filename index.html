@@ -9,7 +9,7 @@
         <title>Title</title>
     </head>
 
-    <body>
+    <body onLoad="window.scroll(0,0)">
         <form class="colorPicker">
             <div class="colorRange">
                 <input type="range" min="1" max="255" value="125" class="color red">
@@ -25,11 +25,11 @@
                 <img class="colorIcon" src="assets/img/colors.png" alt="image">
             </a>
             <div class="navSection">
-                <a class="navLink">Home</a>
-                <a class="navLink">About</a>
-                <a class="navLink">Projects</a>
-                <a class="navLink">Skills</a>
-                <a class="navLink">Contact</a>
+                <a class="navLink" href="#home">Home</a>
+                <a class="navLink" href="#about">About</a>
+                <a class="navLink" href="#projects">Projects</a>
+                <a class="navLink" href="#skills">Skills</a>
+                <a class="navLink" href="#contact">Contact</a>
             </div>
             <i class="fas fa-mail-bulk"></i>
 
@@ -51,11 +51,16 @@
         <section class="home scroll" id="home">
             <article class="homeArticle">
                 <h1 class="homeName">Zivanovic Jelena</h1>
+                <h3 class="homeText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed sodales dui. Sed turpis diam, eleifend quis aliquam vestibulum, pretium quis nisi.</h3>
             </article>
-
         </section>
 
         <section class="about scroll" id="about">
+            <article class="mainArticle">
+                <h2 class="mainHeader">About me</h2>
+                <p class="mainText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed sodales dui. Sed turpis diam, eleifend quis aliquam vestibulum, pretium quis nisi. Ut ex libero, sodales in nisl id, elementum maximus lorem. Donec et dui tortor. Maecenas consequat nulla ut quam suscipit faucibus. Ut varius ante nulla, ut imperdiet lorem consequat non. Maecenas est felis, suscipit consectetur dictum eu, bibendum in quam. Aliquam erat volutpat. Curabitur molestie pretium ante quis cursus. Suspendisse in gravida leo, et malesuada est. Aliquam erat volutpat. Quisque sed lorem tempor, tempus elit et, elementum ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</p>
+
+            </article>
 
         </section>
 

@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
     // stringify: https://www.w3schools.com/js/js_json_stringify.asp
+    $("html, body").css({
+
+
+    });
 
     var red = 125;
     var green = 125;

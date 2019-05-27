@@ -33,6 +33,23 @@ body
   left: 110px
   display: none
 
+.mainArticle
+  width: 80%
+  height: auto
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: justify
+
+.mainHeader
+  font-size: 2em
+  padding: 1em
+
+.mainText
+  font-size: 1.3em
+  padding: 50px 0 100px 100px
+
 @media only screen and (min-width: 0px) and (max-width: 1024px)
   .scroll, body
     width: 100%
@@ -44,4 +61,11 @@ body
 
   .arrowLeft, .arrowRight
     display: none
+
+  .mainArticle
+    width: 90%
+    padding-top: 35px
+
+  .mainText
+    padding: 0
 
