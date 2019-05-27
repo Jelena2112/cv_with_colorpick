@@ -3,7 +3,6 @@ $(document).ready(function(){
     // stringify: https://www.w3schools.com/js/js_json_stringify.asp
     $("html, body").css({
 
-
     });
 
     var red = 125;
@@ -118,6 +117,7 @@ $(document).ready(function(){
         }
         else if(currentSection == "#skills"){
             currentSection = "#contact";
+            $(".arrowRight").hide();
         }
 
         $('html, body').animate({
@@ -147,6 +147,7 @@ $(document).ready(function(){
         }
         else if(currentSection == "#contact"){
             currentSection = "#skills";
+            $(".arrowRight").show();
         }
 
         $('html, body').animate({
@@ -154,8 +155,6 @@ $(document).ready(function(){
         },2000);
 
     });
-
-
 
     //  var elements = ["#home","#about","#projects"];
     //  var currentElement = 0;
@@ -166,7 +165,6 @@ $(document).ready(function(){
     //          scrollLeft: $(elements[currentElement]).offset().left
     //      }, 2000);
     // });
-
 
     $(".mobileBar").click(function () {
 
