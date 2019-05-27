@@ -1,9 +1,6 @@
 $(document).ready(function(){
 
     // stringify: https://www.w3schools.com/js/js_json_stringify.asp
-    $("html, body").css({
-
-    });
 
     var red = 125;
     var green = 125;
@@ -31,25 +28,29 @@ $(document).ready(function(){
 
     $(".navLink").click(function(){
 
-        var currentNavPosition = $(this).attr("href");
-        $(".arrowLeft").show();
-        $(".arrowRight").show();
+        if (widthWindow > 1025){
 
-        if(currentNavPosition == "#home"){
-            $(".arrowLeft").hide();
-            currentNavPosition = "#home";
-        }
-        else if(currentNavPosition == "#about" || currentNavPosition == "#projects" || currentNavPosition == "#skills") {
+            var currentNavPosition = $(this).attr("href");
             $(".arrowLeft").show();
-            currentNavPosition = $(this).attr("href");
+            $(".arrowRight").show();
+
+            if(currentNavPosition == "#home"){
+                $(".arrowLeft").hide();
+                currentNavPosition = "#home";
+            }
+            else if(currentNavPosition == "#about" || currentNavPosition == "#projects" || currentNavPosition == "#skills") {
+                $(".arrowLeft").show();
+                currentNavPosition = $(this).attr("href");
+            }
+            else if(currentNavPosition == "#contact"){
+                $(".arrowRight").hide();
+                currentNavPosition = "#contact";
+            }
+            $('html, body').animate({
+                scrollLeft: $(currentNavPosition).offset().left
+            },2000);
         }
-        else if(currentNavPosition == "#contact"){
-            $(".arrowRight").hide();
-            currentNavPosition = "#contact";
-        }
-        $('html, body').animate({
-            scrollLeft: $(currentNavPosition).offset().left
-        },2000);
+
     });
 
 
@@ -57,7 +58,6 @@ $(document).ready(function(){
         var color = $(this).parent().css("background-color");
         $(".colorPicker").css({"background-color":color});
     });
-
 
     $(".colorLink").click(function(){
         if (widthWindow > 1025){
