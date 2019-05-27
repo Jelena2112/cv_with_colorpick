@@ -28,11 +28,11 @@ $(document).ready(function(){
 
     $(".navLink").click(function(){
 
-        if (widthWindow > 1025){
+        var currentNavPosition = $(this).attr("href");
 
-            var currentNavPosition = $(this).attr("href");
-            $(".arrowLeft").show();
-            $(".arrowRight").show();
+        if (widthWindow > 1024) {
+
+            $(".arrowLeft, .arrowRight").show();
 
             if(currentNavPosition == "#home"){
                 $(".arrowLeft").hide();
@@ -46,13 +46,18 @@ $(document).ready(function(){
                 $(".arrowRight").hide();
                 currentNavPosition = "#contact";
             }
-            $('html, body').animate({
-                scrollLeft: $(currentNavPosition).offset().left
-            },2000);
         }
 
-    });
+        else{
+            $(".arrowLeft, .arrowRight").hide();
 
+        }
+        $('html, body').animate({
+            scrollTop: $(currentNavPosition).offset().top,
+            scrollLeft: $(currentNavPosition).offset().left
+        },2000);
+
+    });
 
     $(".colorLink").click(function() {
         var color = $(this).parent().css("background-color");
@@ -157,6 +162,12 @@ $(document).ready(function(){
             scrollLeft: $(currentSection).offset().left
         },2000);
 
+    });
+
+    $(".arrowBottom").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".about").offset().top
+        }, 2000);
     });
 
     //  var elements = ["#home","#about","#projects"];
