@@ -57,6 +57,13 @@ $(document).ready(function(){
             scrollLeft: $(currentNavPosition).offset().left
         },2000);
 
+        $(".navSection").animate({"height": "0px"}, 1000, function () {
+            $(".navSection").css({"display": "none"});
+            $(".fa-times").hide();
+            $(".fa-bars").show();
+            navigationShown = false;
+            inProgress = false;
+        });
     });
 
     $(".colorLink").click(function() {
