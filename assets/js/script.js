@@ -48,22 +48,26 @@ $(document).ready(function(){
             }
         }
 
+        else if (widthWindow <= 1024){
+            $(".navSection").animate({"height": "0px"}, 1000, function () {
+                $(".navSection").css({"display": "none"});
+                $(".fa-times").hide();
+                $(".fa-bars").show();
+                navigationShown = false;
+                inProgress = false;
+            });
+        }
+
         else{
             $(".arrowLeft, .arrowRight").hide();
 
         }
+
         $('html, body').animate({
             scrollTop: $(currentNavPosition).offset().top,
             scrollLeft: $(currentNavPosition).offset().left
         },2000);
 
-        $(".navSection").animate({"height": "0px"}, 1000, function () {
-            $(".navSection").css({"display": "none"});
-            $(".fa-times").hide();
-            $(".fa-bars").show();
-            navigationShown = false;
-            inProgress = false;
-        });
     });
 
     $(".colorLink").click(function() {
