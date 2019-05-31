@@ -215,4 +215,20 @@ $(document).ready(function(){
         inProgress = true;
     });
 
+    $(".imageLink").mouseenter(function () {
+
+        $(".projectName").show();
+    });
+    $(".imageLink").mouseleave(function () {
+        $(".projectName").hide();
+    });
+
+    $(".imageLink2").mouseenter(function () {
+
+        $(".projectName2").show();
+    });
+    $(".imageLink2").mouseleave(function () {
+        $(".projectName2").hide();
+    });
+
 });
