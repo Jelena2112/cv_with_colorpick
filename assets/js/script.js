@@ -68,6 +68,9 @@ $(document).ready(function(){
             scrollLeft: $(currentNavPosition).offset().left
         },2000);
 
+
+
+
     });
 
     $(".colorLink").click(function() {
